@@ -1,0 +1,12 @@
+# @package _global_
+
+experiment_name: m1_sota_comparison
+
+trainer:
+  logger_name: m1_sota_comparison
+
+model:
+  tqgsacap:
+    evaluation:
+      protocol: pycocoevalcap_track4cap
+      no_external_rewrite: true

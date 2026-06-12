@@ -1,0 +1,38 @@
+# @package _global_
+
+stage: 1
+
+model:
+  lr: ${optimizer.bridge_lr}
+  dropout: 0.1
+  grad_clip: 1.0
+  temperature: 0.07
+  embed_dim: 512
+  llm_name: bert-base-uncased
+  itm_loss_weight: 0.5
+  max_length: 50
+  eval_config: /workspace/AskVideos-VideoCLIP/eval_configs/video_clip_v0.1.yaml
+  freeze:
+    llm_decoder_last_n: 2
+    llm_encoder_last_n: 1
+    video_qformer_last_n: 2
+    qformer_last_n: 2
+
+optimizer:
+  bridge_lr: 2e-6
+  llm_lr: 2e-6
+  video_lr: 1e-6
+  weight_decay: 0.01
+  warmup_ratio: 0.04
+  training_ratio: 0.4
+
+trainer:
+  max_epochs: 100
+  gpus: 4
+  accelerator: gpu
+  strategy: ddp_find_unused_parameters_true
+  logger_name: stage1
+  log_dir: ${project_root}/scripts/yoloworld_lightning/logs
+  precision: 16-mixed
+  gradient_clip: 1.0
+  log_every_n_steps: 100

@@ -1,0 +1,13 @@
+# @package _global_
+
+experiment_name: b2_global_st_only
+
+trainer:
+  logger_name: b2_global_st_only
+
+model:
+  tqgsacap:
+    bridge:
+      query_type: qformer
+      query_count: 32
+      use_keyframe_memory: false

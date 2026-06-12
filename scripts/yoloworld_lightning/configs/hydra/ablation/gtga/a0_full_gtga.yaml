@@ -1,0 +1,13 @@
+# @package _global_
+
+experiment_name: a0_full_gtga
+
+trainer:
+  logger_name: a0_full_gtga
+
+model:
+  tqgsacap:
+    gtga:
+      use_t2s_gating: true
+      use_s2t_grounding: true
+      use_iterative: true

@@ -1,0 +1,12 @@
+# @package _global_
+
+experiment_name: c1_source_random
+
+trainer:
+  logger_name: c1_source_random
+
+model:
+  tqgsacap:
+    bridge:
+      keyframe_source: random
+      keyframe_topk: 8

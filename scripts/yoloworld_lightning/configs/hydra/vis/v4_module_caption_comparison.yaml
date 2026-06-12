@@ -1,0 +1,17 @@
+# @package _global_
+
+experiment_name: v4_module_caption_comparison
+mode: test
+
+trainer:
+  logger_name: v4_module_caption_comparison
+
+visualization:
+  enabled: true
+  type: module_caption_comparison
+  save_dir: ${results_dir}/vis/v4_module_caption_comparison
+
+model:
+  tqgsacap:
+    evaluation:
+      no_external_rewrite: true

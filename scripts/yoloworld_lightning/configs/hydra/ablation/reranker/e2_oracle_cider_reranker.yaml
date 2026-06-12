@@ -1,0 +1,12 @@
+# @package _global_
+
+experiment_name: e2_oracle_cider_reranker
+
+trainer:
+  logger_name: e2_oracle_cider_reranker
+
+model:
+  tqgsacap:
+    reranker:
+      enabled: true
+      strategy: oracle_cider

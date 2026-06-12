@@ -1,0 +1,21 @@
+# @package _global_
+
+experiment_name: d3_bart_mean_pooled_visual_lower_bound
+
+trainer:
+  logger_name: d3_bart_mean_pooled_visual_lower_bound
+
+model:
+  tqgsacap:
+    gtga:
+      use_t2s_gating: false
+      use_s2t_grounding: false
+      use_iterative: false
+    bridge:
+      query_type: mean_pool_mlp
+      use_keyframe_memory: false
+      query_count: 32
+    decoder:
+      arch: encoder_decoder
+      name: facebook/bart-base
+      freeze: true

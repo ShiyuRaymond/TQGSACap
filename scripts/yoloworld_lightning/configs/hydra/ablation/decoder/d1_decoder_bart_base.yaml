@@ -1,0 +1,13 @@
+# @package _global_
+
+experiment_name: d1_decoder_bart_base
+
+trainer:
+  logger_name: d1_decoder_bart_base
+
+model:
+  tqgsacap:
+    decoder:
+      arch: encoder_decoder
+      name: facebook/bart-base
+      freeze: true

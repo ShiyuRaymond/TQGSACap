@@ -1,0 +1,13 @@
+# @package _global_
+
+experiment_name: a2_no_s2t_grounding
+
+trainer:
+  logger_name: a2_no_s2t_grounding
+
+model:
+  tqgsacap:
+    gtga:
+      use_t2s_gating: true
+      use_s2t_grounding: false
+      use_iterative: true

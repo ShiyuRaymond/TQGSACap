@@ -1,0 +1,32 @@
+# Python/runtime
+__pycache__/
+*.py[cod]
+*.so
+.pytest_cache/
+.mypy_cache/
+
+# Experiment outputs
+scripts/yoloworld_lightning/logs/*
+scripts/yoloworld_lightning/checkpoints/*
+scripts/yoloworld_lightning/outputs/*
+scripts/yoloworld_lightning/results/*
+!scripts/yoloworld_lightning/logs/.gitkeep
+!scripts/yoloworld_lightning/checkpoints/.gitkeep
+!scripts/yoloworld_lightning/outputs/.gitkeep
+!scripts/yoloworld_lightning/results/.gitkeep
+
+# Large data and weights must be transferred separately.
+scripts/yoloworld_lightning/data/*
+!scripts/yoloworld_lightning/data/.gitkeep
+!scripts/yoloworld_lightning/data/README_DATA.md
+pretrained_weights/
+pretrained_models/
+*.pt
+*.pth
+*.ckpt
+*.safetensors
+
+# Local env
+.env
+.venv/
+wandb/

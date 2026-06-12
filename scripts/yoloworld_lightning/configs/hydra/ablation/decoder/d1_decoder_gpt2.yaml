@@ -1,0 +1,15 @@
+# @package _global_
+
+experiment_name: d1_decoder_gpt2
+
+trainer:
+  logger_name: d1_decoder_gpt2
+
+model:
+  tqgsacap:
+    decoder:
+      arch: decoder_only
+      name: gpt2
+      freeze: true
+    reranker:
+      enabled: false

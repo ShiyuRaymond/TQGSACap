@@ -1,0 +1,13 @@
+# @package _global_
+
+experiment_name: b1_mean_pool_mlp_bridge
+
+trainer:
+  logger_name: b1_mean_pool_mlp_bridge
+
+model:
+  tqgsacap:
+    bridge:
+      query_type: mean_pool_mlp
+      query_count: 32
+      use_keyframe_memory: true

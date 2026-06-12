@@ -1,0 +1,14 @@
+# @package _global_
+
+experiment_name: f1_with_infonce
+
+trainer:
+  logger_name: f1_with_infonce
+
+model:
+  tqgsacap:
+    loss:
+      use_infonce: true
+      infonce_weight: 1.0
+      infonce_sigma: 0.1
+      temperature: 0.07

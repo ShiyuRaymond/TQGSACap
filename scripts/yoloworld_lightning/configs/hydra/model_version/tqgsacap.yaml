@@ -1,0 +1,70 @@
+# @package _global_
+
+model_version:
+  name: tqgsacap
+  module: null
+  class_name: YOLOCaptionLightning
+
+results_dir: ${project_root}/scripts/yoloworld_lightning/results
+
+model:
+  max_length: 64
+  eval_config: /workspace/AskVideos-VideoCLIP/eval_configs/video_clip_v0.1.yaml
+  tqgsacap:
+    embed_dim: 768
+
+    spatial_encoder:
+      channels: [256, 512, 512]
+      pool_size: 3
+      spatial_num_frames: 32
+      image_size: 224
+
+    video_encoder:
+      name: video_llama
+      clip_dim: 1024
+      temporal_num_frames: 32
+      image_size: 224
+
+    gtga:
+      use_t2s_gating: true
+      use_s2t_grounding: true
+      use_iterative: true
+      num_heads: 8
+      dropout: 0.1
+
+    bridge:
+      query_type: qformer
+      query_grouping: soft
+      query_count: 32
+      keyframe_source: gating
+      keyframe_topk: 8
+      use_keyframe_memory: true
+      num_heads: 8
+      dropout: 0.1
+
+    decoder:
+      arch: encoder_decoder
+      name: facebook/bart-base
+      freeze: true
+      num_beams: 5
+      num_candidates: 5
+
+    reranker:
+      enabled: true
+      strategy: gpt2
+      name: gpt2
+      alpha: 0.7
+
+    loss:
+      use_infonce: true
+      infonce_weight: 1.0
+      infonce_sigma: 0.1
+      temperature: 0.07
+
+    freeze:
+      decoder: true
+      qformer_last_n: 0
+      video_qformer_last_n: 0
+
+    evaluation:
+      no_external_rewrite: true

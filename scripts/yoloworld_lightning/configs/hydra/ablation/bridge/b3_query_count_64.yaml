@@ -1,0 +1,11 @@
+# @package _global_
+
+experiment_name: b3_query_count_64
+
+trainer:
+  logger_name: b3_query_count_64
+
+model:
+  tqgsacap:
+    bridge:
+      query_count: 64

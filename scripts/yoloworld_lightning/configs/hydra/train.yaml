@@ -1,0 +1,45 @@
+defaults:
+  - data: msrvtt
+  - stage: stage2
+  - base_model: yoloworld_v2_l
+  - model_version: tqgsacap
+  - callbacks: default
+  - wandb: disabled
+  - _self_
+  - optional main: null
+  - optional ablation/gtga: null
+  - optional ablation/bridge: null
+  - optional ablation/keyframes: null
+  - optional ablation/decoder: null
+  - optional ablation/reranker: null
+  - optional ablation/loss: null
+  - optional ablation/backbone: null
+  - optional vis: null
+
+project_root: ${oc.env:YOLO_WORLD_ROOT,/workspace/YOLO-World}
+
+seed: 11
+mode: fit_test  # fit, test, fit_test
+test_after_fit: true
+log_config: true
+
+checkpoint:
+  warmstart: null   # Partially load model weights before fitting.
+  resume: null      # Resume Lightning trainer state.
+  test: null        # Test-only checkpoint or explicit checkpoint after fit.
+  strict_load: false
+
+hydra:
+  job:
+    chdir: false
+    config:
+      override_dirname:
+        exclude_keys:
+          - checkpoint.warmstart
+          - checkpoint.resume
+          - checkpoint.test
+  run:
+    dir: ${trainer.log_dir}/${trainer.logger_name}/hydra/${now:%Y-%m-%d}/${now:%H-%M-%S}
+  sweep:
+    dir: ${trainer.log_dir}/${trainer.logger_name}/multirun/${now:%Y-%m-%d_%H-%M-%S}
+    subdir: ${hydra.job.num}_${hydra.job.override_dirname}

@@ -1,0 +1,13 @@
+# @package _global_
+
+experiment_name: g1_clip_backbone_fairness
+
+trainer:
+  logger_name: g1_clip_backbone_fairness
+
+model:
+  tqgsacap:
+    backbone_fairness:
+      target_backbone: clip
+      status: requires_clip_feature_cache
+      note: "Use this config with a CLIP feature datamodule/cache before running G1."

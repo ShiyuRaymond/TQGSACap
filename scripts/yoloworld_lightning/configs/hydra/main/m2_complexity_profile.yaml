@@ -1,0 +1,28 @@
+# @package _global_
+
+experiment_name: m2_complexity_profile
+mode: test
+
+trainer:
+  logger_name: m2_complexity_profile
+
+profiling:
+  enabled: true
+  report_modules:
+    - video_llama
+    - yoloworld
+    - gtga
+    - bridge
+    - decoder
+    - reranker
+  metrics:
+    - total_params
+    - trainable_params
+    - flops
+    - latency
+    - peak_memory
+
+model:
+  tqgsacap:
+    evaluation:
+      no_external_rewrite: true

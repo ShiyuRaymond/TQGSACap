@@ -1,0 +1,13 @@
+# @package _global_
+
+experiment_name: a3_no_iterative
+
+trainer:
+  logger_name: a3_no_iterative
+
+model:
+  tqgsacap:
+    gtga:
+      use_t2s_gating: true
+      use_s2t_grounding: true
+      use_iterative: false

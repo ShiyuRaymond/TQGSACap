@@ -1,0 +1,9 @@
+# @package data
+
+defaults:
+  - msrvtt
+  - _self_
+
+batch_size: 2
+num_workers: 0
+max_caption_length: 32

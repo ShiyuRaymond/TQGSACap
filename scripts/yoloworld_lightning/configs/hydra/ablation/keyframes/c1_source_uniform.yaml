@@ -1,0 +1,12 @@
+# @package _global_
+
+experiment_name: c1_source_uniform
+
+trainer:
+  logger_name: c1_source_uniform
+
+model:
+  tqgsacap:
+    bridge:
+      keyframe_source: uniform
+      keyframe_topk: 8

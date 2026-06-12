@@ -1,0 +1,17 @@
+# @package data
+
+train_json: ${project_root}/scripts/yoloworld_lightning/data/msrvtt/anno/MSRVTT_caption_bart_mini_2800.json
+val_json: ${project_root}/scripts/yoloworld_lightning/data/msrvtt/anno/test.json
+test_json: ${project_root}/scripts/yoloworld_lightning/data/msvd/anno/filtered_annotation.json
+
+video_dir: ${project_root}/scripts/yoloworld_lightning/data/msvd/YouTubeClips
+feature_dir: ${project_root}/scripts/yoloworld_lightning/data/msvd/features
+pixel_dir: ${project_root}/scripts/yoloworld_lightning/data/msrvtt/pixels
+frames_dir: ${project_root}/scripts/yoloworld_lightning/data/msrvtt/frames_32
+temporal_frames_dir: ${.frames_dir}
+spatial_frames_dir: ${.frames_dir}
+
+batch_size: 36
+num_workers: 8
+max_caption_length: 64
+eval_cfg: /workspace/AskVideos-VideoCLIP/eval_configs/video_clip_v0.1.yaml

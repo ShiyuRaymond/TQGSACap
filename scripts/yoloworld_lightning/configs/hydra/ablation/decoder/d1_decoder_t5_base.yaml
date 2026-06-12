@@ -1,0 +1,13 @@
+# @package _global_
+
+experiment_name: d1_decoder_t5_base
+
+trainer:
+  logger_name: d1_decoder_t5_base
+
+model:
+  tqgsacap:
+    decoder:
+      arch: encoder_decoder
+      name: t5-base
+      freeze: true

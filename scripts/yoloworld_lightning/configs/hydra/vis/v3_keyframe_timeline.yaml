@@ -1,0 +1,20 @@
+# @package _global_
+
+experiment_name: v3_keyframe_timeline
+mode: test
+
+trainer:
+  logger_name: v3_keyframe_timeline
+
+visualization:
+  enabled: true
+  type: keyframe_timeline
+  save_dir: ${results_dir}/vis/v3_keyframe_timeline
+
+model:
+  tqgsacap:
+    bridge:
+      keyframe_source: gating
+      keyframe_topk: 8
+    evaluation:
+      no_external_rewrite: true

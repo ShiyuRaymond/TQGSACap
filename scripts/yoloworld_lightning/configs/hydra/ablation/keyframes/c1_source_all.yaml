@@ -1,0 +1,11 @@
+# @package _global_
+
+experiment_name: c1_source_all
+
+trainer:
+  logger_name: c1_source_all
+
+model:
+  tqgsacap:
+    bridge:
+      keyframe_source: all

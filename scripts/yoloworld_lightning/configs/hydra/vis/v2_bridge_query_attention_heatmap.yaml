@@ -1,0 +1,19 @@
+# @package _global_
+
+experiment_name: v2_bridge_query_attention_heatmap
+mode: test
+
+trainer:
+  logger_name: v2_bridge_query_attention_heatmap
+
+visualization:
+  enabled: true
+  type: bridge_query_attention_heatmap
+  save_dir: ${results_dir}/vis/v2_bridge_query_attention_heatmap
+
+model:
+  tqgsacap:
+    bridge:
+      query_type: qformer
+    evaluation:
+      no_external_rewrite: true

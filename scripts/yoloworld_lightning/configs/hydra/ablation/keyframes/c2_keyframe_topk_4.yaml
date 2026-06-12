@@ -1,0 +1,12 @@
+# @package _global_
+
+experiment_name: c2_keyframe_topk_4
+
+trainer:
+  logger_name: c2_keyframe_topk_4
+
+model:
+  tqgsacap:
+    bridge:
+      keyframe_source: gating
+      keyframe_topk: 4

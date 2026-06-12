@@ -1,0 +1,12 @@
+# @package _global_
+
+experiment_name: f1_without_infonce
+
+trainer:
+  logger_name: f1_without_infonce
+
+model:
+  tqgsacap:
+    loss:
+      use_infonce: false
+      infonce_weight: 0.0

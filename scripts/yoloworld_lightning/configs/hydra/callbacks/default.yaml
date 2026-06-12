@@ -1,0 +1,19 @@
+# @package callbacks
+
+checkpoint:
+  enabled: true
+  monitor: val/rougel
+  mode: max
+  save_top_k: 1
+  filename: best-{epoch:02d}
+  save_last: true
+
+early_stopping:
+  enabled: true
+  monitor: val/rougel
+  mode: max
+  patience: 20
+
+lr_monitor:
+  enabled: true
+  logging_interval: step

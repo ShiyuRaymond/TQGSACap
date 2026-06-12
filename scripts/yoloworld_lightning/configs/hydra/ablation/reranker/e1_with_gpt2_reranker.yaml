@@ -1,0 +1,14 @@
+# @package _global_
+
+experiment_name: e1_with_gpt2_reranker
+
+trainer:
+  logger_name: e1_with_gpt2_reranker
+
+model:
+  tqgsacap:
+    reranker:
+      enabled: true
+      strategy: gpt2
+      name: gpt2
+      alpha: 0.7

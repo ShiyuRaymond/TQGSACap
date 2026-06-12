@@ -1,0 +1,11 @@
+# @package _global_
+
+experiment_name: e1_without_reranker
+
+trainer:
+  logger_name: e1_without_reranker
+
+model:
+  tqgsacap:
+    reranker:
+      enabled: false

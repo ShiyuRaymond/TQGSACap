@@ -1,0 +1,14 @@
+# @package _global_
+
+experiment_name: b0_full_bridge
+
+trainer:
+  logger_name: b0_full_bridge
+
+model:
+  tqgsacap:
+    bridge:
+      query_type: qformer
+      query_grouping: soft
+      query_count: 32
+      use_keyframe_memory: true

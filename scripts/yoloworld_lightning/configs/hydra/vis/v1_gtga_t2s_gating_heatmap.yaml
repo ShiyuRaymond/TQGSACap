@@ -1,0 +1,19 @@
+# @package _global_
+
+experiment_name: v1_gtga_t2s_gating_heatmap
+mode: test
+
+trainer:
+  logger_name: v1_gtga_t2s_gating_heatmap
+
+visualization:
+  enabled: true
+  type: gtga_t2s_gating_heatmap
+  save_dir: ${results_dir}/vis/v1_gtga_t2s_gating_heatmap
+
+model:
+  tqgsacap:
+    gtga:
+      use_t2s_gating: true
+    evaluation:
+      no_external_rewrite: true
