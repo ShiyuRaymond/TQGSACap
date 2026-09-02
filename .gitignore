@@ -14,6 +14,7 @@ scripts/yoloworld_lightning/results/*
 !scripts/yoloworld_lightning/checkpoints/.gitkeep
 !scripts/yoloworld_lightning/outputs/.gitkeep
 !scripts/yoloworld_lightning/results/.gitkeep
+!scripts/yoloworld_lightning/results/msrvtt_clean_eval.json
 
 # Large data and weights must be transferred separately.
 scripts/yoloworld_lightning/data/*

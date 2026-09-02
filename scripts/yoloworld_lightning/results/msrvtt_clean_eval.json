@@ -1,0 +1,27 @@
+{
+  "dataset": "MSR-VTT",
+  "protocol": "pycocoevalcap + PTBTokenizer + all references",
+  "num_videos": 2990,
+  "references": "scripts/yoloworld_lightning/data/msrvtt/anno/test.json",
+  "references_sha256": "fd5336dc9f73050e50b2f31e3e63bdcb698a3b864732ebf657f2afb82c5407a5",
+  "predictions": "scripts/yoloworld_lightning/data/msrvtt/txt",
+  "metrics_raw": {
+    "BLEU-1": 0.9090088215993151,
+    "BLEU-2": 0.7135638811943468,
+    "BLEU-3": 0.528583649645246,
+    "BLEU-4": 0.3741663274802719,
+    "METEOR": 0.27370841353058345,
+    "ROUGE-L": 0.638464686981222,
+    "CIDEr": 0.5312610677790298
+  },
+  "metrics_x100": {
+    "BLEU-1": 90.90088215993151,
+    "BLEU-2": 71.35638811943468,
+    "BLEU-3": 52.8583649645246,
+    "BLEU-4": 37.41663274802719,
+    "METEOR": 27.370841353058346,
+    "ROUGE-L": 63.84646869812221,
+    "CIDEr": 53.12610677790298
+  },
+  "evaluated_at": "2026-09-02T10:25:27.598723+00:00"
+}
